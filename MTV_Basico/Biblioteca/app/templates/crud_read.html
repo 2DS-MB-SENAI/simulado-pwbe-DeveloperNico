@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de items</title>
+</head>
+<body>
+    <a href="{% url 'crud_create' %}">Adicionar um novo livro</a>
+    <ul>
+        {% for i in livros %}
+            <li>
+                {{i.titulo}} escrito por {{i.autor}} - quantidade de páginas {{i.paginas}}.
+                <a href="{% url 'crud_update' i.pk %}">Atualizar</a>
+                <a href="{% url 'crud_delete' i.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
