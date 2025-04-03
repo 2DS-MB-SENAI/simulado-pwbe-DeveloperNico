@@ -1,7 +1,7 @@
 from django import forms
-from .models import Biblioteca
+from .models import Livro
 
-class BibliotecaForm(forms.ModelForm):
+class LivroForm(forms.ModelForm):
     class Meta:
-        model = Biblioteca
+        model = Livro
         fields = ['titulo', 'autor', 'paginas']
